@@ -43,6 +43,36 @@ jupyter notebook
 
 2. Abra o notebook desejado.
 
+## Uso no VS Code
+
+1. Abra a pasta do repositório no VS Code.
+2. Instale as extensões Python e Jupyter (caso ainda não tenha).
+3. Com o ambiente virtual ativado e as dependências instaladas, abra um notebook.
+4. No canto superior direito do notebook, clique em Select Kernel.
+5. Escolha o interpretador Python do ambiente local (.venv).
+
+### Verificação rápida no terminal
+
+Para confirmar que o ambiente está correto:
+
+```bash
+python -c "import qiskit; import matplotlib; import numpy; print('Ambiente OK')"
+```
+
+Se esse comando funcionar, o kernel correto deve aparecer no VS Code.
+
+## Solução de problemas comuns
+
+- Erro ModuleNotFoundError: No module named 'qiskit':
+	- Ative o ambiente virtual e rode novamente pip install -r requirements.txt.
+	- Depois, no notebook, troque o kernel para o interpretador do .venv.
+- Kernel não aparece no seletor:
+	- Execute python -m ipykernel install --user --name repo-aulas-cq --display-name "Python (repo-aulas-cq)".
+	- Feche e reabra o VS Code.
+- Notebook abre com kernel errado:
+	- Use Command Palette -> Python: Select Interpreter e selecione o .venv.
+	- Reabra o notebook e selecione o mesmo kernel.
+
 ## Observações
 
 - Se estiver usando VS Code, selecione o interpretador Python do ambiente virtual criado.
