@@ -12,6 +12,11 @@ Este repositório reúne os notebooks usados nas aulas práticas da disciplina d
 - Python 3.10+
 - pip atualizado
 
+Arquivos de dependências no repositório:
+
+- `requirements.in`: dependências diretas (editável pelos instrutores).
+- `requirements.txt`: lockfile gerado automaticamente com versões travadas (usado pelos alunos).
+
 ## Instalação do ambiente
 
 1. (Opcional, mas recomendado) criar e ativar um ambiente virtual:
@@ -26,6 +31,20 @@ source .venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+
+## Atualizar dependências (instrutores)
+
+Quando for necessário atualizar versões para uma nova oferta da disciplina:
+
+1. Edite o arquivo `requirements.in`.
+2. Gere novamente o lockfile:
+
+```bash
+python -m pip install pip-tools
+python -m piptools compile requirements.in -o requirements.txt
+```
+
+3. Teste os notebooks e faça commit dos dois arquivos.
 
 ## Como abrir os notebooks
 
@@ -64,14 +83,14 @@ Se esse comando funcionar, o kernel correto deve aparecer no VS Code.
 ## Solução de problemas comuns
 
 - Erro ModuleNotFoundError: No module named 'qiskit':
-	- Ative o ambiente virtual e rode novamente pip install -r requirements.txt.
-	- Depois, no notebook, troque o kernel para o interpretador do .venv.
+- Ative o ambiente virtual e rode novamente pip install -r requirements.txt.
+- Depois, no notebook, troque o kernel para o interpretador do .venv.
 - Kernel não aparece no seletor:
-	- Execute python -m ipykernel install --user --name repo-aulas-cq --display-name "Python (repo-aulas-cq)".
-	- Feche e reabra o VS Code.
+- Execute python -m ipykernel install --user --name repo-aulas-cq --display-name "Python (repo-aulas-cq)".
+- Feche e reabra o VS Code.
 - Notebook abre com kernel errado:
-	- Use Command Palette -> Python: Select Interpreter e selecione o .venv.
-	- Reabra o notebook e selecione o mesmo kernel.
+- Use Command Palette -> Python: Select Interpreter e selecione o .venv.
+- Reabra o notebook e selecione o mesmo kernel.
 
 ## Observações
 
