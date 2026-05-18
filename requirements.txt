@@ -213,6 +213,8 @@ pygments==2.20.0
     #   ipython
     #   ipython-pygments-lexers
     #   nbconvert
+pylatexenc==2.10
+    # via -r requirements.in
 pyparsing==3.3.2
     # via matplotlib
 python-dateutil==2.9.0.post0
