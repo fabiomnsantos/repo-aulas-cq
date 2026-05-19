@@ -4,7 +4,7 @@ Este repositório reúne os notebooks usados nas aulas práticas da disciplina d
 
 ## Conteúdo
 
-- `aula-prática-1-cq.ipynb`
+- `aula-pratica-1-cq-didatico-colab.ipynb`
 - `projeto-simples-1-deutsch-jozsa-CQ.ipynb`
 
 ## Requisitos
